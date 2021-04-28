@@ -19,6 +19,8 @@ def main():
     visit[0][0]=1
     while need_visit:
         x, y = need_visit.pop(0)
+
+        #도착지 도착 했을때 
         if x == N-1 and y == M-1:
             print(visit[x][y])
             break
