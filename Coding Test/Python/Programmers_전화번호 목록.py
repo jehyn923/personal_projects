@@ -4,21 +4,21 @@ def solution(phone_book):
     shortest = 0
     phone_book_searcher = 0 
     phone_dic = dict()
-    
-    for i in range(len(phone_book)):
-        
+    phone_book.sort(key=len)
+
+    for i in range(len(phone_book)-1):
+        print(phone_dic)
         try:
             phone_dic[len(phone_book[i])].append(phone_book[i])
         except: 
             phone_dic[len(phone_book[i])]=list()
             phone_dic[len(phone_book[i])].append(phone_book[i])
-            
+    
     for book_searcher in range(len(phone_book)):
         #상수 개
         for k in phone_dic:
-            if k >= len(phone_book[book_searcher]):
-                continue
-            else:
+            if k < len(phone_book[book_searcher]):
+                
                 if phone_book[book_searcher][:k] in phone_dic[k]:
                     return False
             
