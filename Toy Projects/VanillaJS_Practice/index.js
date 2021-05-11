@@ -10,21 +10,21 @@ function handleResize(event){
     console.log(event)
 }
 
+//element.classList 안에 add, remove 와 같은 methods가 있음
 function handleClick(){
     const currentClass = title.className;
-    if(currentClass !== CLICKED_CLASS){
-        title.className = CLICKED_CLASS;
+    //hasClass는 Boolean으로 들어옴
+    /*
+    const hasClass = title.classList.contains(CLICKED_CLASS);
+    if(!hasClass){
+        title.classList.add(CLICKED_CLASS);
     } else {
-        title.className = "";
+        title.classList.remove(CLICKED_CLASS);
     }
-}
+    */
 
-function handleOffline(){
-    console.log("lalalalalala");
-}
-
-function handleOnline(){
-    console.log("Welcome Back!");
+    //똑같은 걸 toggle을 사용할 수 있음
+    title.classList.toggle(CLICKED_CLASS);
 }
 
 function init(){
